@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="uft-8">
+    <title>입력 요소</title>
+</head>
+<body>
+    <!--
+        서버로 데이터 보내기 : form 태그
+        1. form 태그 내부의 하위 요소들(input, button, select, textarea 태그)의
+            값(value)을 서버로 모두 보낸다.
+        2. form 태그의 하위 요소들은 name 속성과 value 속성이
+            서버측에서 변수명과 변수에 저장된 값의 역할을 수행한다.
+            EX) <input name = "age" value="20">
+                -> 서버측에서 String age = 20; 으로 받아들일 수 있다.
+        3. 서버측으로 보내는 모든 값의 타입은 String이다.
+        4. form 태그 속성
+            1) action : 서버로 데이터를 보내는 것을 submit이라고 한다.
+                        submit을 어디로 해야 하는지 경로를 작성한다.
+            2) method : 서버로 데이터를 보내는 방법
+                    (1) get 방식 (method = "get")
+                        - method의 default이다.
+                        - 데이터를 헤더(header)에 포함시킨다.
+                        - 보내는 데이터가 URL에 노출된다.
+                        - 보안에 취약하다, 빠르다.
+                        - 단순검색에 주로 사용된다.
+                    (2) post 방식 (method = "post")
+                        - 데이터가 바디(body)에 포함된다.
+                        - 보내는 데이터가 노출되지 않는다.
+                        - 보안이 우수하다, 느리다.
+                        - 로그인, 회원가입 드에서 사용한다.
+            3) enctype : 인코딩 방식이다.
+                    (1) 파일을 보내는 경우에 사용한다.
+                    (2) form 태그 내부에 파일 첨부(<input type = "file">)가 포함된 경우,
+                        enctype = "multipart/form-data"로 작성하고 method = "post"로 한다.
+    -->
+    
+    <!--
+        입력태그 : input 태그
+        1. 사용자로부터 데이터를 입력 받는 태그이다.
+        2. 사용자가 입력한 데이터가 value 속성이 된다.
+        3. 입력의 형식에 따라서 type이 다른다.
+            1) typoe= "Text" 일반 데이터를 입력받는다.    -default
+            2) type = "password" 비밀번호를 입력 받는다.
+            3) type = "button" 역할이 없는 일반 버튼이다.
+            4) type = "submit" submit 하는 버튼이다.
+            5) type = "reset" reset 하는 버튼이다.
+            6) type = "radio" ⊙남 ⊙남여
+            7) type = "check bx
+            8) type = "file" 파일 첨부이다.
+            9) type = "안보인다. hidden" 서버에 데이터를 보내기 위한 용도이다.
+    -->
+    
+    <!--
+        선택태그 : select 태그
+        버튼태그 : button 태그, submit하는 버튼이다.
+        입력태그 : textarea태그, 다중 행 입력이 가능하다.
+    -->
+    <h3>각종 입력 태그</h3>
+    <form>
+        <input type="text" placeholder="일반텍스트"><br>
+        <input type="password" placeholder="비밀번호"><br>
+        <input type="number" min ="1" max="12" placeholder="숫자만"><br>
+        <!-- 위 세개는 사용가능성 높음 -->
+        <input type ="email" placeholder="이메일만"><br>
+        <input type="url" placeholder="웹주소만"><br>
+        <input type="date" placeholder="날짜"><br>
+        <input type="time" placeholder="시간"><br>
+    </form>
+    <hr>
+    <h3>버튼</h3>
+    <form action="https://search.naver.com/search.naver">
+        검색 <input type="text" name="query"><br>
+        <input type="button" value="버튼에 적히는 텍스트"><br>
+        <input type="submit" value="submit"><br>
+        <button>submit</button><br>
+        <!--위 submit두개의 submit버튼은 같은 역할을 함(서버로 데이터 전송)-->
+        <input type="reset" value="입력초기화"><br>
+    </form>
+    <hr>
+    <h3>선택</h3>
+    <fieldset>  <!--대부분 CSS에서 fieldset 안보이게 처리하기도 함-->
+        <legend>하나만 선택하는 radio</legend>
+        <!--name이 같아야 서버측에서 동일 항목으로 인식-->        
+        <!--label을 붙이면 글자를 눌러도 찍힌다.-->
+        <!--id는 유니크하다 다 달라야한다.-->
+        <!--기본값으로 하나 체크해둬야한다. checked 입력하기-->
+        <!--백앤드과정도 생각하면 name, value가 필수이다. value가 없으면 NullPointException 뜬다.-->
+        <input type="radio" name="gender" value="none" id="g1" checked><label for="g1"> 선택안함</label>
+        <input type="radio" name="gender" value="female" id="g2"><label for="g2"> 여성</label>
+        <input type="radio" name="gender" value="fale" id="g3"><label for="g3"> 남성</label>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>마음대로 선택하는 체크박스</legend>
+        <!--name이 같아야 서버측에서 동일 항목으로 인식-->
+        <input type="checkbox" name="agreement" value="1" id="agr1"><label for="agr1"> 필수약관 동의</label><br>
+        <input type="checkbox" name="agreement" value="2" id="agr2"><label for="agr2"> 선택약관 동의</label><br>
+        <input type="checkbox" name="agreement" value="3" id="agr3"><label for="agr3"> 마케팅수신 동의</label><br>
+    </fieldset>
+    <hr>
+    <h3>목록선택</h3>
+    <dl>
+        <dt>select 하나만</dt>
+        <dd>
+            <select name="month">
+                <option value="">월</option> <!--month의 value가 없으면 빈문자열("")이니 선택 안한것으로 javaScript에서 검사-->
+                <option value="1">1월</option>
+                <option value="2">2월</option>
+                <option value="3">3월</option>
+                <option value="4">5월</option>
+                <option value="5">5월</option>
+                <option value="6">6월</option>
+                <option value="7">7월</option>
+                <option value="8">8월</option>
+                <option value="9">9월</option>
+                <option value="10">10월</option>
+                <option value="11">11월</option>
+                <option value="12">12월</option> <!--나중에 반복문으로 돌려서 노가다처럼 만들지 않음-->
+            </select>
+        </dd>
+        <dt>select 다중</dt>
+        <dd>
+            <select name="character" multiple>  <!--다중선택은 multiple을 붙여준다.-->
+                <option value="jjanggu">짱구</option>
+                <option value="jadu">자두</option>
+                <option value="bread">브레드</option>
+                <option value="spongebob">스폰지밥</option> <!--ctrl키 or shift키를 눌러서 다중 선택-->
+            </select>
+        </dd>
+        <dt>data_list + input</dt>
+        <dd>
+            <input type="text" list="domain" name = "domain" placeholder="선택/입력" >
+            <datalist id = "domain">  <!--select의 역할-->
+                <option value = "naver.com"/>   <!--option은 나홀로 태그 가능-->
+                <option value = "kakao.com"/>
+                <option value = "gmail.com"/>
+                <option value = "daum.net"/>
+                <option value = "nate.com"/>
+            </datalist>
+        </dd>
+    </dl>
+    <hr>
+    <!--
+        textarea 태그
+        rows ="10" -> 행10개
+        cols = "30" -> 열30개(영문기준으로 30글자, 한글기준15글자)
+    -->
+    <h3>자기소개</h3>
+    <textarea rows="10" cols="30" name="self" placeholder="자기소개"></textarea>
+    
+    <hr>
+    <h3>파일첨부</h3>
+    <form method="post" enctype="multipart/form-data">
+        파일첨부 <input type="file" name="filename" >    <!--서버에서 name속성을 확인하면 파일명을 확인할 수 있다.-->
+        <button>submit</button>
+    </form>
+</body>
+</html>
