@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>text</title>
+    <!-- 방법1) 웹 폰트를 위한 link -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <style>
+        /* 방법2) 웹 폰트를 위한 import */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+        
+         p{
+             /* 1. 정렬(text-align) : left, right, encter, hustify --중요 */
+             text-align: left;
+             
+             /* 2. 행높이(line-height) --중요 */
+             /* 기본 폰트사이즈 : 16px, */
+             line-height: 50px;
+             
+             /* 3. 들여쓰기(text-indent) --별로 안중요 */
+             /* 문단의 첫번째줄에만 적용 됨 (ex 원고지) */
+             text-indent: 50px;
+             
+             /* 4. 밑줄(underline), 윗줄(overline), 취소선(line-through) */
+             /* 라인을 조절할 때 사용 */
+             text-decoration: underline;
+             
+             /* 5. 그림자 */
+             /* text-shadow: 가로방향 세로방향 번짐크기 색 */
+             text-shadow: 3px 3px 1px #e2ff00, 6px 6px 1px rgb(255, 164, 39);
+        }
+        span{
+             / * 주의 */
+             / * 인라인 요소는 블록레벨에 적용되는 CSS속성을 처리하지 못한다. */
+            text-align: right;
+        }
+        a{
+            / * 대부분 a 태그는 디폴트를 없애준다. */
+            color: blak;
+            text-decoration: none;
+        }
+        pre{
+            /* 1. 폰트 크기 */
+            font-size: 20px;
+            /* 2. 폰트 스타일 */
+            /* 기울임(italic, oblique) */
+            font-style: oblique;
+            /* 3. 폰트 굵기 */
+            /* lighter, normal, bold, bolder, 100~900(백단위) */
+            font-weight: bolder;
+            /* 4. 색상 */
+            color: white;   /* 폰트색 */
+            background-color: #71ff47;   /* 배경색 */
+            
+            /* <GGB색상표 꺼내기> 색상에 마우스 커서 두고 ctrl + E */
+            /* 흰색은 rgb(255,255,255) - 빛의3원색 다 합친것 */
+            /* 검정색 rgb(0,0,0) */
+            
+            /* 5. 글꼴 (시스템에 설치된 글꼴) */
+            /* 설치된 글꼴이 있으면 사용되고, 없으면 시스템 기본 글꼴이 사용된다. */
+            /* C:\Windows\Fonts */
+            /* sans-serif: 고딕계열 */
+            /*   https://fonts.google.com/   */
+            font-family: '맑은 고딕 굵게', sans-serif;
+            
+            /* 6. 글꼴 (웹폰트) */
+            /*
+                1) link 태그를 추가하고 해당 font의 font-family 지정
+                2) @import를 추가하고 해당 font의 font-familt 지정
+            */
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+    </style>
+</head> 
+<body>
+    <!-- <p>는 "블록 레벨" -->
+    <p>지기지기자가자가조 지기지기자가자가조 지기지기자가자가조 지기지기자가자가조 나쁜짓을 하면은 지기지기자가자가조 지기지기자가자가조 지기지기자가자가조 지기지기자가자가조 우리에게 들키지! 낮에도 밤에도 느낄 수 있는 눈과 귀가 있다네 우리의 손오공!</p>
+    
+    <!-- <span>는 "인라인요소" -->
+    <span>사랑하며 살면은 평화가 올거야~!</span><br><br>
+    
+    <a href="https://www.naver.com">네이버로 가자</a><br>
+    
+    <pre>날아라 슈퍼보드!</pre>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CSS</title>
+    <!-- 1. internal(인터널) 스타일 : style 태그에 css를 작업한다.-->
+    <style type = "text/css">    /* type = "text/css"는 생략가능 */
+    /*css주석은 이것만 가능하다. - <style태그 내에서 가능>*/
+    /*
+        selector(대상){
+            속성(항목) : 값;
+            속성(항목) : 값;
+        }
+    */
+        
+        h1{
+            color: crimson;
+        }
+        
+    </style> 
+    
+<!-- 2. external(익스터널) 스타일 : 따로 만든 css 파일을 연결한다.-->
+<!--
+    link태그 : 외부 파일을 HTML과 연결한다.
+    -속성-
+    1. href : 연결할 파일의 경로를 지정한다.
+    2. rel : HTML과 연결할 파일의 관계(relation)를 지정한다.
+-->  
+    <link href ="./01_css.css" rel ="stylesheet">
+    <!--동일한 대상에 대한 css가 중복되게 다시 나타나면 덮어쓰기 된다.(후작업대로 나타남)-->
+    
+</head>
+<body>
+    <!-- 3. inline(인라인)스타일 : 태그에 직접 속성으로 지정한다.-->
+    <!--무조건 반영된다.-->
+    <h1 style="color: orange">나를 예쁘게 꾸며주세요.</h1>
+</body>
+</html>
