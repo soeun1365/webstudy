@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Zindex</title>
+    <style>
+        /*
+            Z-index : 앞 뒤 순서 조정 속성
+            1. 정수값을 가진다.
+            2. 절대적인것이 아니라 상대적으로 높은 값인것이 앞으로 나옴
+            3. position이 relative, absolute, fixed인 경우에 적용된다.
+            4. 같은 depth를 가진 요소끼리 비교한다.
+                부모-자식간에 비교 불가능, 형제간에 비교 가능
+        */
+        .wrap{
+            width: 400px;
+            height: 400px;
+            background-color: beige;
+            position: relative;
+            z-index: 100;        /* 부보자식관계이기 때문에 빨강 파랑과 비교 불가능 */
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+        #blue{
+            background-color: blue;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 10;         /* z-index가 빨강보다 커서 앞으로 나옴 */
+        }
+        #red{
+            background-color: red;
+            position: absolute;
+            top: 110px;
+            left: 110px;
+            z-index: 1;         /* z-index가 파랑보다 작아서 뒤로 감 */
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div id="blue"></div>
+        <div id="red"></div>
+    </div>
+</body>
+</html>

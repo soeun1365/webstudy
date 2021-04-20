@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>float</title>
+    <style>
+        .wrap{
+            width: 640px;
+            height: 300px;
+            border: 1px solid black;
+            padding: 10px;
+        }
+        img{
+            width: 150px;
+            /* float: 떠다니다는 의미 */
+            /* img가 해당 흐름에서 벗어나서★ 왼쪽이나 오른쪽에 배치 */
+            float: left;
+        }
+        .container{
+            width: 240px;
+            height: 240px;
+            border: 1px solid black;
+            padding: 10px;
+            margin: 10px;
+        }
+        .container > div{
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            font-weight: 900;
+            font-style: italic;
+            background-color: azure;
+            margin: 10px;
+            float: left;
+        }
+        .float-style{
+            width: 240px;
+            height: 300px;
+            border: 1px solid black;
+        }
+        .float-style > .left-box{
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            border: 1px solid black;
+            box-sizing: border-box;
+            margin: 10px;
+            float: left;
+        }
+        .float-style > .foot-box{
+            width: 220px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            border: 1px solid black;
+            box-sizing: border-box;
+            /* float 속성에서 벗어나는 속성: clear */
+            /* left, right, both가 있음 */
+            /* 여기서는 left만 벗어나면 됨 */
+            clear: left;
+            margin: 10px;
+        }
+        .float-style div:hover{
+            background-color: beige;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <img alt="개구리" src="images/frog.jpg">
+        <img alt="강아지" src="images/dog.jpg">
+        <img alt="사자" src="images/lion.jpg">
+        <img alt="고양이" src="images/cat.jpg">
+        <img alt="꽃병" src="images/vase.jpg">
+        기본적인 문서의 흐름은 왼쪽 -> 오른쪽, 위 -> 아래 방향이다. 포지션을 수정하면 화면에 콘텐츠를 어디에 배치할 것인지 조정할 수 있다. 포지션을 조정하는 방법은 float 속성을 이용하거나 position성을 이용하는 방법이 있다. 이 중에서 float 속성을 사용하면 기본적인 문서의 흐름에서 벗어나서 float 속성이 사용된 요소의 부모 요소의 왼쪽이나 오른쪽에 배치가 된다.
+    </div>
+    <div class="container">
+        <div>봄</div>
+        <div>여름</div>
+        <div>가을</div>
+        <div>겨울</div>
+    </div>
+    <div class="float-style">
+        <div class="left-box">1</div>
+        <div class="left-box">2</div>
+        <div class="foot-box">3</div>
+    </div>
+</body>
+</html>
