@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>quiz15</title>
+    <style>
+        html, body, aside, div, ul{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            box-sizing: border-box;
+        }
+        aside{
+            width: 300px;
+            border: 2px solid hotpink;
+            margin: 30px auto 0;
+        }
+        input[type=radio]{
+            display: none;  /* 라디오 버튼 숨김, 글씨를 눌러도 체크되므로 */
+        }
+        .content-list{
+            display: none;  /* 내용을 숨겨놓음 */
+        }
+        
+        
+        /* 선택된 라디오에 해당하는 label 속성 변경하기 */
+        #front:checked ~ div:nth-of-type(1) label[for=front]{
+            font-weight: 900;
+            background-color: hotpink;
+        }
+        #back:checked ~ div:nth-of-type(1) label[for=back]{
+            font-weight: 900;
+            background-color: hotpink;
+        }
+        
+        
+        /* id 가 front인 radio가 선택되었다면 프로트엔드 내용이 나타난다. */
+        #front:checked ~ div:nth-of-type(2){
+            display: block; /* 내용을 보여준다. */
+        }
+        /* id 가 bakc인 radio가 선택되었다면 백엔드 내용이 나타난다. */
+        #back:checked ~ div:nth-of-type(3){
+            display: block; /* 내용을 보여준다. */
+        }
+        .tab-menu{
+            display: flex;
+        }
+        .tab-menu > label{
+            /* 인라인레벨인 label - > 크기 조절이 안된다잉 그래서 block으로 바꾼다음에 크기 지정 */
+            display: block;
+            width: 150px;   /* 50%라고 해도됨 */
+            padding: 20px 0;    /* padding으로 height 조절도하고, line-height의 역할도 함 */
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .content-list > ul{
+            list-style-type: none;
+        }
+        .content-list .content{
+            border-top: 1px solid pink;
+            padding: 5px 10px;
+        }
+        .thumnail{
+            width: 100px;
+            height: 60px;
+            background-color: antiquewhite;
+            background-repeat: no-repeat;
+            background-size: 100px 60px;
+        }
+        #thumb1{background-image: url(images/fruit1.jpg);}
+        #thumb2{background-image: url(images/fruit2.jpg);}
+        #thumb3{background-image: url(images/fruit3.jpg);}
+        #thumb4{background-image: url(images/cat.jpg);}
+        #thumb5{background-image: url(images/eagle.jpg);}
+        #thumb6{background-image: url(images/dog.jpg);}
+        
+    </style>
+</head>
+<body>
+    <aside>
+        <!-- 상단탭 -->
+        <input type="radio" name="tab" id="front" checked>
+        <input type="radio" name="tab" id="back">
+        <div class="tab-menu">
+            <label for="front">프론트엔드</label>
+            <label for="back">백엔드</label>
+        </div>
+        <!-- 프론트엔드 클릭했을 때 나타날 화면 -->
+        <div class="content-list">
+            <ul>
+                <li class="content">
+                    <!-- 작은이미지(썸네일) -->
+                    <div id="thumb1" class="thumnail">
+                    </div>
+                    <!--내용 -->
+                    <div class="discription">
+                        <h3>HTML</h3>
+                        <p>Hyper Text Markup Language</p>
+                    </div>
+                </li>
+        
+                <li class="content">
+                    <!-- 작은이미지(썸네일) -->
+                    <div id="thumb2" class="thumnail">
+                    </div>
+                    <!--내용 -->
+                    <div class="discription">
+                        <h3>CSS</h3>
+                        <p>Cascading Style Sheet</p>
+                    </div>
+                </li>
+
+                <li class="content">
+                    <!-- 작은이미지(썸네일) -->
+                    <div id="thumb3" class="thumnail">
+                    </div>
+                    <!--내용 -->
+                    <div class="discription">
+                        <h3>JavaScript</h3>
+                        <p>ECMA Sript</p>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+        
+        <!-- 백엔드 클릭했을 때 나타날 화면 -->
+        <div class="content-list">
+            <ul>
+                <li class="content">
+                    <!-- 작은이미지(썸네일) -->
+                    <div id="thumb4" class="thumnail">
+                    </div>
+                    <!--내용 -->
+                    <div class="discription">
+                        <h3>Java</h3>
+                        <p>Java</p>
+                    </div>
+                </li>
+        
+                <li class="content">
+                    <!-- 작은이미지(썸네일) -->
+                    <div id="thumb5" class="thumnail">
+                    </div>
+                    <!--내용 -->
+                    <div class="discription">
+                        <h3>JSP</h3>
+                        <p>Java Server Page</p>
+                    </div>
+                </li>
+
+                <li class="content">
+                    <!-- 작은이미지(썸네일) -->
+                    <div id="thumb6" class="thumnail">
+                    </div>
+                    <!--내용 -->
+                    <div class="discription">
+                        <h3>Spring</h3>
+                        <p>Spring Frame Work</p>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+        
+    </aside>
+</body>
+</html>
