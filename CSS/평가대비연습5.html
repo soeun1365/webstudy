@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>평가대비연습</title>
+    <style>
+        body, html{
+            padding:none;
+            margin:none;
+        }
+        .wrap{
+            margin:auto;
+            width: 500px;
+        }
+        h3{
+            color: forestgreen;
+            font-size: 30px;
+            text-align: center;
+        }
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th{
+            background-color: lightgray;
+        }
+        th{
+            width: 100%;
+            height: 30px;
+            border-top: 1px solid gray;
+            border-bottom: 1px solid gray;
+        }
+        td{
+            width: 100%;
+            height: 30px;
+        }
+        td input{
+            border: none;
+        }
+        tr > td:nth-child(1){
+            width: 30%;
+            padding-left: 10px;
+        }
+        tr > td:nth-child(2){
+            width: 70%;
+        }
+        input{
+            padding: 3px;
+        }
+        tr > td:nth-child(2) > input{
+            width: 70%;
+            border: 1px solid lightgray;
+        }
+        tr > td:nth-child(2) > input:focus{
+            background-color: lightcyan;
+            outline: none;
+            border: 1px solid lightgray;
+        }
+        .phone_num{
+            width: 100%;
+        }
+        .PhoneSelect{
+            width: 25%;
+        }
+        .phone_num > .phone{
+            width:25%;
+        }
+        .full_email{
+            width: 100%;
+        }
+        .full_email > .email{
+            width: 42%;
+        }
+        tr > td:nth-child(2) > input[type=file]{
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h3>회원가입폼</h3>
+        <form>
+        <table>
+            <tr>
+                <th colspan="2">필수정보</th>
+            </tr>
+            <tr>
+                <td class="subject">아이디</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td class="subject">비밀번호</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td class="subject">비밀번호확인</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td class="subject">이름</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td class="subject">성별</td>
+                <td>
+                    <label>
+                        <input type="radio" name="gender" value="choice"><span>선택안함</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="male"><span>남자</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="femal"><span>여자</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="subject">연락처</td>
+                <td class="phone_num">
+                    <select id="country" name="nationNo" class="PhoneSelect">
+                        <option value="010">010</option>
+                        <option value="02">02</option>
+                        <option value="032">032</option>
+                        <option value="031">031</option>
+                    </select> -
+                    <input type="text" class="phone"> -
+                    <input type="text" class="phone">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <th colspan="2">선택정보</th>
+            </tr>
+            <tr>
+                <td class="subject">닉네임</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td class="subject">이메일</td>
+                <td class="full_email">
+                    <input type="text" class="email">&nbsp;@
+                    <input type="text" list="domain" name = "domain" placeholder="도메인입력/선택" class="email">
+                        <datalist id = "domain">
+                            <option value = "naver.com"/>
+                            <option value = "daum.net"/>
+                            <option value = "gmail.com"/>
+                            <option value = "nate.com"/>
+                    </datalist>
+                </td>
+            </tr>
+            <tr>
+                <td class="subject">이메일수신</td>
+                <td>
+                    <label>
+                        <input type="radio" name="Y/N/email" value="Y_email"><span>수신</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="Y/N/email" value="N_email"><span>미수신</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="subject">SMS수신</td>
+                <td>
+                    <label>
+                        <input type="radio" name="Y/N/SMS" value="Y_SMS"><span>수신</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="Y/N/SMS" value="N_SMS"><span>미수신</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="subject">취미 활동</td>
+                <td>
+                    <label>
+                        <input type="checkbox" name="hobbies" value="reading">독서
+                    </label>
+                    <label>
+                        <input type="checkbox" name="hobbies" value="fishing">낚시
+                    </label>
+                    <label>
+                        <input type="checkbox" name="hobbies" value="swimming">수영
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="subject">프로필사진</td>
+                 <td>
+                     <input type="file" id="profile" name="profile" class="noborder">
+                </td> 
+            </tr>
+            <tr><td></td></tr>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td class="BN_center">
+                        <button type="submit">회원가입</button>&nbsp;
+                        <button type="reset">다시작성</button>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+        </form>
+    </div>
+</body>
+</html>

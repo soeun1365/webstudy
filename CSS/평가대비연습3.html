@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>평가대비연습3</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+        body, html{
+            padding: none;
+            margin: none;
+        }
+        .wrap{
+            width: 500px;
+            margin: auto;
+        }
+        .welcome{
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            background-color: lightgray;
+            text-align: center;
+            font-weight: 500;
+            font-size: 1.5em;
+            box-shadow: 0 3px 3px gray;
+            z-index: 999;
+        }
+        .container{
+            width: 480px;
+            margin: auto;
+            padding: 10px;
+            background-color: beige;
+            display: flex;
+            justify-content: space-between;
+            margin-top:4px;
+            
+        }
+        .content{
+            width: 225px;
+        }
+        .content > .rectangle{
+            display: flex;
+            width: 92%;
+            height: 30px;
+            padding: 10px;
+            margin: auto;
+            line-height: 40px;
+            border-radius: 7px;
+            background-color: darkgray;
+            
+        }
+        .content > .rectangle > input{
+            width: 90%;
+            height: 30px;
+            float: right;
+            border-radius: 7px;
+            outline: none;
+            border: none;
+            background-color: darkgray;
+
+        }
+        .rectangle > .icon{
+            width: 20%;
+            height: 100%;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+        .content > .forgot{
+            text-align: right;
+            margin-bottom: 10px;
+        }
+        .content a{
+            line-height: 30px;
+            text-decoration: none;
+            color: darkgray;
+        }
+        .content > button{
+            width: 60%;
+            height: 50px;
+            float: right;
+            background-color: rgb(220,20,60);
+            color: white;
+            font-weight: 500;
+            outline: none;
+            border: none;
+            border-radius: 7px;
+        }
+        .content > .twitter{
+            background-color: rgb(135,206,235);
+            color: white;
+            margin-bottom: 10px;
+        }
+        .content > .facebook{
+            background-color: rgb(0,0,139);
+            color: white;
+            margin-bottom: 10px;
+        }
+        .content > .google{
+            background-color: rgb(255,0,0);
+            color: white;
+            margin-bottom: 10px;
+        }
+        .content .whiteColor{
+            color: white;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="welcome">WELCOME</div>
+        <div class="container">
+            <div class="content">
+                <div class="rectangle">
+                    <div class="icon">
+                        <i class="far fa-smile"></i>
+                    </div><input type="text" placeholder="User or Email">
+                </div>
+                <div class="forgot">
+                    <a href="">Forgot your username?</a>
+                </div>
+                <div class="rectangle">
+                    <div class="icon">
+                        <i class="fas fa-unlock"></i>
+                    </div>
+                    <input type="text" placeholder="Password">
+                </div>
+                <div class="forgot">
+                    <a href="">Forgot your password?</a>
+                </div>
+                    <button type="submit">LOGIN NOW</button>
+            </div>
+            <div class="content">
+                 <div class="rectangle twitter">
+                     <div class="icon">
+                        <i class="fab fa-twitter"></i>
+                     </div><a href="" class="whiteColor">LOG in with Twitter</a>
+                </div>
+                <div class="rectangle facebook">
+                    <div class="icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <a href="" class="whiteColor">LOG in with Facebook</a>
+                </div>
+                <div class="rectangle google">
+                    <div class="icon">
+                        <i class="fab fa-google-plus-g"></i>
+                    </div><a href="" class="whiteColor">LOG in with Google+</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
