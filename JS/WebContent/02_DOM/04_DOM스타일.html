@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<div id="box">
+	<script>
+	/*
+		1. 선택요소.style.css속성
+			1) 하이푼(-)이 있으면 제거하고,
+			2) camel case방식으로 css속성명을 변경한다.
+			3) 예시
+				선택요소.style.color = 'red';
+				선택요소.style.textAlign = 'center';
+		2. 선택요소.style[css속성]
+			1) css속성명을 언제나 그대로 사용하고,
+			2) 속성명을 따옴표로 묶어야 한다.
+			3) 예시
+				선택요소.style['color']= red;
+				선택요소.style['text-align']= 'center';
+		3. DOM 처리를 통한 CSS변경은 inline처리 되기 때문에 무조건 반영된다.
+	*/	
+	var div = document.getElementById('box');
+	div.style.margin = 'auto';
+	div.style.width = '200px';
+	div.style.height = '50px';
+	div.style.lineHeight = '50px';
+	div.style.backgroundColor = 'skyblue';
+	div.style.border = '3px solid blue';
+	div.style.borderRadius = '25px';
+	
+	div.style.color = 'white';
+	div.style.textAlign = 'center';
+	div.style.fontWeight = '900';
+	div.style['font-size'] = '1.5em';
+	//div.style.fontSize = '1.5em';		이방법도 연습해보기
+	
+	div.textContent = '안녕하세요';
+	</script>
+	</div>
+</body>
+</html>

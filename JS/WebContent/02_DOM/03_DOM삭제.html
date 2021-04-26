@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<h1 id="title" class="hello">안녕하세요</h1>
+	<div id="container" class="wrap">
+		<div id="box1" class="box">박스1</div>
+		<div id="box2" class="box">박스2</div>
+		<div id="box3" class="box">박스3</div>
+	</div>
+	<script>
+	
+		/* h1을 선택하는 6가지 방법
+		document.getElementById('title');
+		document.getElementsByTagName('h1')[0];
+		document.getElementsByClassName('hello')[0];
+		
+		document.querySelector('#title');
+		document.querySelectorAll('h1')[0];
+		document.querySelectorAll('.hello')[0];
+		*/
+		console.log(document.querySelectorAll('.hello')[0]);
+
+		
+		// 1. 삭제할 요소 알아내기
+		var deleteElement = document.getElementById('title');
+		// 2. 요소삭제 방법 두가지
+		//document.body.removeChild(deleteElement);
+		//deleteElement.parentNode.removeChild(deleteElement);
+		
+		var deleteElement = document.getElementById('box3');
+		document.getElementById('container').removeChild(deleteElement);
+	</script>
+</body>
+</html>
