@@ -82,10 +82,50 @@
 	document.getElementById('select1').appendChild(select);
 	</script>
 	
-	<div id="container"></div>
-	<!-- 가로 50 * 50 다이얼 테이블만들기 -->
-	<script>
-		var table
-	</script>
+	  <div id = "container">
+   </div>
+   
+   <script>
+      var table = document.createElement('table');
+      document.getElementById('container').appendChild(table);
+      
+      var caption = document.createElement('caption');
+      caption.textContent = '다이얼';
+      caption.setAttribute('id','dial');
+      table.appendChild(caption);
+            
+      for(m = 0 ; m <= 3; m++){
+         var tr = document.createElement('tr');
+         tr.setAttribute('class','tr');
+         table.appendChild(tr);   
+            for(n = 0 ; n <= 2 ; n++){
+               var td = document.createElement('td');
+               td.setAttribute('class','td');
+               td.textContent = n+(3*m)+1;
+               document.getElementsByClassName('tr')[m].appendChild(td);
+            }
+      }
+         document.getElementsByClassName('tr')[3].getElementsByClassName('td')[0].textContent='*';
+         document.getElementsByClassName('tr')[3].getElementsByClassName('td')[1].textContent='0';      
+         document.getElementsByClassName('tr')[3].getElementsByClassName('td')[2].textContent='#';
+      
+      var t = document.getElementsByTagName(table);
+      t.style[borderCollapse]='collapse';
+      
+      t.style.border = '1px solid black';
+      t.style.width='150px';
+      t.style.height='150px';
+      
+      var caption = document.getElementById('dial');
+      caption.style.color = 'red';
+      
+      var td = document.getElementsByTagName('td');
+      td.style.width ='50px';
+      td.style.width = '50px';
+      td.style.textAlign = 'center';
+      td.style.border = '1px solid black';
+   </script>
+
+
 </body>
 </html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	table{
+		border-collapse: collapse;
+	}
+	table, td{
+		border: 1px solid gray;
+	}
+	td{
+		padding: 5px 3px;
+	}
+	.even{
+		background-color: beige;
+	}
+</style>
+</head>
+<body>
+	<div id="practice1"></div>
+	
+	<script>
+		for(let n = 1; n <= 10 ; n++){
+			console.log(n);
+		}
+		let n = 100;	//재선언
+		console.log(n);
+		
+		
+	</script>
+	<div id = "gugudan"></div>	
+	<script>
+		//정수를 입력 받아서 입력 받은 구구단 테이블 출력하기
+		let dan = Number(prompt('몇단을 출력할까요?'));
+		
+		let table = document.createElement('table');
+	    document.getElementById('gugudan').appendChild(table);
+	    
+	    if(dan % 2 == 0){
+			table.setAttribute('class','even');
+		}
+	    
+	    let tbody = document.createElement('tbody');
+	    table.appendChild(tbody);
+	    
+	    for(let row = 1 ; row <= 9 ; row++){
+	    	 let tr = document.createElement('tr');
+    		 tbody.appendChild(tr);
+    		 
+    		 	let td = document.createElement('td');
+	    		tr.appendChild(td);
+	    		td.textContent = dan;
+	    		
+	    		let td2 = document.createElement('td');
+	    		tr.appendChild(td2);
+	    		td2.textContent = '*';
+	    		
+	    		let td3 = document.createElement('td');
+	    		tr.appendChild(td3);
+	    		td3.textContent = row;
+	    		
+	    		let td4 = document.createElement('td');
+	    		tr.appendChild(td4);
+	    		td4.textContent = '=';
+	    		
+	    		let td5 = document.createElement('td');
+	    		tr.appendChild(td5);
+	    		td5.textContent = dan * row;
+	    }
+	</script>
+	
+	<div id="practice2"></div>
+	
+	<script>
+		//전체 구구단 출력하기
+		let g_table = document.createElement('table');
+		document.getElementById('practice2').appendChild(g_table);
+		
+		let g_tbody = document.createElement('tbody');
+		g_table.appendChild(g_tbody);
+		
+		for(let row = 1 ; row <= 9 ; row++){
+			let g_tr = document.createElement('tr');
+			g_tbody.appendChild(g_tr);
+			
+			for(let col = 2 ; col <= 9 ; col++){
+				let g_td = document.createElement('td');
+				g_tr.appendChild(g_td);
+				
+				g_td.textContent = col + ' * ' + row + ' = ' + (col*row) ; 
+				
+			}
+			
+		}
+		
+	</script>
+</body>
+</html>
