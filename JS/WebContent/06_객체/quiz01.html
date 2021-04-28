@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		table, td, th{
+			border: 1px solid black;
+		}
+		table{
+			border-collapse : collapse
+		}
+		th, td{
+			width: 100px;
+			height: 50px;
+			text-align: center;
+		}
+		th{
+			background-color: lightgrey;
+		}
+	</style>
+</head>
+<body>
+	<div id = "practice1"></div>
+	<script>
+		var people = [
+			{
+				'name': '브레드',
+				'age': 10
+			},
+			{
+				'name': '윌크',
+				'age': 20
+			},
+			{	'name': '초코',
+				'age': 30
+			}
+		];
+		
+		var table = document.createElement('table');
+		document.getElementById('practice1').appendChild(table);
+		
+		var thead = document.createElement('thead');
+		table.appendChild(thead);
+		
+		var tbody = document.createElement('tbody');
+		table.appendChild(tbody);
+		
+		var tr = document.createElement('tr');
+		thead.appendChild(tr);
+		
+		var th = document.createElement('th');
+		th.textContent = '이름';
+		document.getElementsByTagName('tr')[0].appendChild(th);
+		
+		var th = document.createElement('th');
+		th.textContent = '나이';
+		document.getElementsByTagName('tr')[0].appendChild(th);
+		
+		for(let i = 0 ; i <= people.length ; i++){	
+				
+				var tr = document.createElement('tr');
+				tbody.appendChild(tr)[i];
+			
+				var td = document.createElement('td');
+				td.textContent = people[i].name;
+				tr.appendChild(td);
+				
+				var td = document.createElement('td');
+				td.textContent = people[i].age;
+				tr.appendChild(td);
+			}
+
+	</script>
+</body>
+</html>
