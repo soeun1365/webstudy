@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+<script>
+	//1. 현재 날짜와 시간
+	var now= new Date();
+	console.log('now: ' + now);
+	
+	//2.특정 날짜 (2021 년4월 29일)
+	var date1 = new Date(2021, 3, 29);	//month가 0부터11로 처리되기 때문에 4월 = 3 입력
+	var date2 = new Date(2021, 3, 29, 10, 40, 30);	//month가 0부터11로 처리되기 때문에 4월 = 3 입력
+	var date3 = new Date('2021-04-29');	//문자열도 가능, 얘는 문자라서 그냥 4월이면 4 입력
+	console.log('date1= ' + date1);
+	console.log('date2= ' + date2);
+	console.log('date3= ' + date3);
+	
+	//3. 년, 월, 일, 요일, 시, 분, 초 를 하나씩 빼는 작업
+	console.log('년: ' + now.getFullYear());
+	console.log('월: ' + (now.getMonth() + 1));	//month가 0부터11로 처리니까 1 더해주기ㅌ 
+	console.log('일: ' + now.getDate());
+	console.log('요일: ' + now.getDay());	//일요일:0, 월요일:1 ... 토요일:6
+	console.log('시: ' + now.getHours());
+	console.log('분: ' + now.getMinutes());
+	console.log('초: ' + now.getSeconds());
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+<script>
+	console.log('파이: ' + Math.PI);
+	console.log('제곱: ' + Math.pow(2,3));
+	console.log('절대값:' + Math.abs(-3));
+	console.log('최대값: ' + Math.max(10, 20, 30, 40, 50));
+	console.log('최소값: ' + Math.min(10, 20, 30, 40, 50));
+	console.log('루트: ' + Math.sqrt(25));
+	console.log('반올림: ' + Math.round(1.5));	//정수로 반올림
+	console.log('올림: ' + Math.ceil(1.5));		//정수로 올림
+	console.log('내림: ' + Math.floor(1.5));	 	//정수로 내림
+	console.log('절사: ' + Math.trunc(1.5));		//정수로 절사
+	console.log('난수: ' + Math.random());		//0<= 난수 <1
+</script>
+<script>
+	//반올림, 올림, 내림, 절사를 자릿수 지정이 가능하도록 함수를 구현하자
+	//1. 소수 2자리 반올림: 1.456 --> round(1.456 * 100) / 100
+	//2. 소수 1자리 반올림: 1.456 --> round(1.456* 10) / 10
+	//3. 소수 0자리 반올림: 1.456 --> round(1.456 * 1) / 1
+	
+	function myRound(n, digit){	//숫자와 자릿수										ceil, floor, trunc 다 똑같이 만들면 됨  Math.round대신 넣어주면됨
+		digit || (digit==0);	//digit에 전달되는 값이 없으면 0으로 초기화, 디폴트
+		return Math.round(n * Math.pow(10, digit))/Math.pow(10, digit);
+	}
+	console.log(myRound(89.8989,3));
+	console.log(myRound(-13.1212,3));
+	
+	function myCeil(n, digit){
+		digit || (digit==0);
+		return Math.ceil(n * Math.pow(10, digit)) / Math.pow(10, digit);
+	}
+	console.log(myCeil(12.3456, 3));
+	
+	function myFloor(n, digit){
+		digit || (digit==0);
+		return Math.floor(n * Math.pow(10, digit)) / Math.pow(10, digit);
+	}
+	console.log(myFloor(-12.121212, 3));
+	
+	function myTrunc(n, digit){
+		digit || (digit==0);
+		return Math.trunc(n * Math.pow(10, digit)) / Math.pow(10, digit);
+	}
+	console.log(myTrunc(-12.121212, 3));
+</script>
+</body>
+</html>
