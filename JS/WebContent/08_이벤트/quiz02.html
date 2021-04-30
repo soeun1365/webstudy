@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		function fa(){
+			alert('처음뵙겠습니다.');
+		}
+		function fb(){
+			alert('만나서 반갑습니다.');
+		}
+		function fc(){
+			fa();
+			fb();
+		}
+		
+		//1. 표준 이벤트(가장 좋은 방법) - 한개 이상 연결 가능
+		onload = function(){
+/*			var button = document.getElementById('message-btn');
+			button.addEventListener('click', fa);	//함수의 이름만 가져와야함
+			
+			button.addEventListener('click', fb);	//함수의 이름만 가져와야함
+*/			
+		//2. 고전 이벤트(fa, fb 함수를 fc라고 하나로 묶는다.)
+			var button = document.getElementById('message-btn');
+			button.onclick = fc;
+		}
+	</script>
+</head>
+<body>
+	<input type = "button" value = "메시지 보기" id = "message-btn">
+</body>
+</html>

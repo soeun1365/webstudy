@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+/*		onload = ()=>{
+			//고전이벤트
+			document.getElementById('check-btn').onclick = function(){
+				
+			};
+			//표준이벤트
+			document.getElementById('check-btn').addEventListener('click', funtion(){
+				
+			});
+			
+		}
+*/
+			//인라인이벤트
+			function f(){
+			document.getElementById('count').textContent = countdown();		}
+		var countdown = function(){  // 익명함수를 이용한 함수표현식
+			visitNo = 0;  // 최초 접근시에만 사용되고 이후에는 클로서의 visitNo를 사용하게 된다.
+			return function(){  // 내부함수의 변수는 클로저에서 처리된다.
+				visitNo++;
+				return visitNo;
+			}
+		}();
+			
+	</script>
+</head>
+<body>
+	<h1>방문자 카운트: <span id="count"></span>명</h1>
+	<input type="button" value="체크" id="check-btn" onclick="f()">	<!-- 클릭이벤트를 넣어야함 -->
+</body>
+</html>

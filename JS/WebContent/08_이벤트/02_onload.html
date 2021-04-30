@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		//고전이벤트 모델로 적어보자
+		// onload: HTML문서(body태그)를 모두 읽은 뒤에
+		window.onload = function(){
+			document.getElementById('box').textContent = '나는 박스다.';
+			
+			//바디부분을 읽고 스크립트를 읽도록 이벤트 설정을 했기때문에 '나는박스다'가 출력됨
+			//원랜 스크립트를 순서대로 읽기 때문에 출력이 안됨
+			// .window는 사실 안적어도됨(window.alert, window.confirm, window.prompt)
+		};
+		
+		/* 
+			표준이벤트모델로 적어보자 - 이렇게 잘 안씀 고전으로 처리하는게 일반적
+			window.addEventListener('load', function(){
+			
+			});
+		*/
+		
+	</script>
+</head>
+<body>
+	<div id = "box"></div>
+	
+	<script>
+		
+	</script>
+</body>
+</html>

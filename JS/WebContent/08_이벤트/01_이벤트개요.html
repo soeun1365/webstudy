@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		/* 
+			1.이벤트 구성요소
+				1)이벤트 객체
+				2) 이벤트 이름
+				3) 이벤트 속성
+				4) 이벤트 리스너
+		
+			2. 이벤트 객체
+				: 이벤트가 연결되는 객체
+			3. 이벤트 이름
+				: 이벤트의 종류를 의미
+				1) click : 클릭
+				2) dblclick : 더블클릭 
+				3) focus : 포커스를 가졌을 때
+				4) blur : 포커스를 잃었을 때
+				5) load : html문서가 로드되면 (문서를 다 읽었으면)
+				6) mouseover : 마우스가 올라가면
+				7) mouseout : 마우스가 나가면
+				8) keypress : 키보드의 키를 누르고있는 동안
+				9) keydown : 키보드 키가 내려갈 때(입력이 완료되기 직전임, 완료후가 아님)
+				10) keyup : 키보드 키다 내려갔다가 올라올 때 (입력이 완료된 직후)
+				11) submit : 폼의 요소를 전송할 때
+			4. 이벤트 속성
+				: 이벤트를 실행시키는 속성(on + 이벤트이름)
+				ex) onclick, ondbclick, onfocus, onblur, onload, 
+					onmouseover, onmouseout, onkeypress, onkeydown, onkeyup, onsubmit
+			5. 이벤트 리스너
+				: 이벤트가 동작시키는 함수
+				function f(){}, function(){}, ()=>{}
+		*/
+		/* 
+			<이벤트 사용 예시> - (고전 이벤트 모델)
+			이벤트객체.이벤트속성 = 이벤트리스너
+			1) 선언적함수 
+			
+			function f(){}
+			window.onload = f;	//이름으로 함수 걸기
+			
+			2)익명함수
+			window.onload = function(){}
+			
+			3)화살표함수
+			window.onload = ()=>{}
+		*/
+		/* 
+			이벤트 모델의 종류
+			1. 고전 이벤트 모델
+				<div id = "box"></div>
+				document.getElementById('box').onclick = function(){};
+			2. 인라인 이벤트 모델
+				function f(){}
+				<div id = "box" onclick = "f()"></div>	//선언적 함수를 인라인 속성값으로 바로 넣기
+			3. 표준 이벤트 모델 : 여러개의 이벤트리스너를 연결 할 수 있다.
+				<div id = "box"></div>
+				document.getElementBtId('box').addEventListener('click', function(){});
+				document.getElementBtId('box').addEventListener('dbclick', function(){});
+		*/
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
