@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<form name = "f" onsubmit = "return fn_search()" >
+		<input type = "text" name = "q" >
+		<br><br>
+		<button>검색</button>
+	</form>
+	<script>
+		function fn_search(){
+			var f = document.forms.f;
+			var q = f.q;
+			if(q.value ==""){
+				alert('검색어를 입력하세요');
+				q.focus();
+				return false;	//preventDefault 없이 submit을 막을 수 있다.
+			}
+			return true;	//if조건문 해당 안되서 나왔을 경우 submit을 하겠다.
+		}
+	</script>
+</body>
+</html>
