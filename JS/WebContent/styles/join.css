@@ -110,8 +110,7 @@ label {
     right: 0;
     width: 115px;
     height: 51px;
-    line-height: 51px;
-    padding: 18px 0 16px;
+    padding: 18px 0 16px;	/* padding으로 가운데 정렬했기때문에 line-height없애기 */
     color: #ffffff;
     text-align: center;
     text-decoration: none;
