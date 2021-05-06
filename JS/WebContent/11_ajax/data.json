@@ -1,0 +1,14 @@
+{
+	"model" : "250d",
+	"price" : 4600,
+	"mDate" : "2021/03/05",
+	"company" : {
+		"name" : "bmw",
+		"country" : "germany",
+		"option" : [
+			"HUD",
+			"Advanced Cruise",
+			"AutoHold"
+		]
+	}
+}
