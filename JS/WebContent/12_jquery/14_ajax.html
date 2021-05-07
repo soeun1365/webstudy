@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function(){
+			$.ajax({
+				url : 'data.txt',
+				dataType : 'text',	// 받아오는 데이터의 타입
+				type : 'get',		// 방식
+				async : true,		// 비동기 통신방식 (default라서 생략가능)
+				success : function(responseText){	// 통신에 성공하면 data에서 받아온 데이터가 저장된다. 
+					console.log(responseText);
+				},
+				error : function(e){
+					console.log(e);
+				}
+			})
+		})
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

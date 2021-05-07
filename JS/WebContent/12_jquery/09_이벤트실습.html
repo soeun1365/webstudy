@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function(){
+			var $answer = $('#answer');
+			//클래스 주기
+			$answer.addClass('blind');
+			
+			var $button = $('#btn');
+			
+			$button.on('click', function(){			
+				//short버전
+				//$answer.toggleClass('blind');		//버튼 눌를때마다 answer의 클래스를 껐다켰다가가 하는 이벤트
+			
+				//long버전
+				if($answer.hasClass('blind')){
+					$answer.removeClass('blind');
+				}else{
+					$answer.addClass('blind');
+				}
+			})
+		})
+	</script>
+	<style>
+		.blind{
+			display : none;
+		}
+	</style>
+</head>
+<body>
+	<input type = "button" id = "btn" value = "정답보기">
+	<div id = "answer">3</div>
+
+</body>
+</html>

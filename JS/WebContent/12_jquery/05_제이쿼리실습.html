@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src = ../js/jquery-3.6.0.js></script>
+	<script>
+		
+		// 1. 클래스 속성
+			//	1) addClass('클래스명')		: class='클래스명'을 추가한다.
+			//	2) removeClass('클래스명') 	: class='클래스명'을 제거한다.
+			//	3) toggleClass('클래스명')	: class='클래스명'을 추가/제거한다. 있으면 제거, 없으면 생성
+			//	4) hasClass('클래스명')		: class='클래스명'가 있으면 true, 없으면 false를 반환한다.
+		
+		//페이지로드이벤트
+		$(function(){
+			$($('li')[0]).addClass('red');			//첫번째 li태그에 class='red'를 추가한다.
+			$($('li')[1]).removeClass('green');		//두번째 li태그에 class='green'를 제거한다.
+			$($('li')[2]).toggleClass('blue');		//세번째 li태그에 class='blue'가 없으므로 생성한다.(있으면 제거, 없으면 생성)
+			
+			if($($('li')[0]).hasClass('red')){
+				alert('첫 번째 목록은 빨강이구나!');
+			}
+		})
+			
+	</script>
+	<style>
+		.red{
+			color : red;
+		}
+		.green{
+			color : green;
+		}
+		.blue{
+			color : blue;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>레드</li>
+		<li class= "green">그린</li>
+		<li>블루</li>
+	</ul>
+</body>
+</html>

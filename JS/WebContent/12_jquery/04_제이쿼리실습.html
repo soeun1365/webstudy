@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src = "../js/jquery-3.6.0.js"></script>
+	<script>
+		
+		//	속성
+		
+		//	1. 객체.getAttribute('name')	
+		//		객체.attr('name')
+		//	2. 객체.setAttribute('name','user_id')
+		//		객체.attr('name','user_id')
+		//	3. 객체.removeAttr('name)	: name속성을 없앤다.
+		
+		//	value 속성
+		
+		//	1. 객체.value
+		//		객체.val()
+		//	2. 객체.value = 'myaccount'
+		//		객체.val('myaccount')
+		
+		
+		//페이지로드이벤트
+		$(document).ready(function(){
+			//실습
+			console.log($('input[type="text"]').attr('name'));		//id
+			console.log($('input[type=password]').val());			//1234
+			console.log( $($('input[type="radio"]')[0]).val());		//male
+			console.log( $($('input[type="radio"]')[1]).val());		//female
+			console.log($('input[type=radio]:checked').val());		//male - 체크가 되어있는것 출력하기
+			$('input[type=radio]:checked').val('남자');				//checked된 것의 value값이 남자로 바뀌어있음
+		})
+		
+	</script>
+</head>
+<body>
+	<form>
+		<input type = "text" name = "id" value = "admin">
+		<input type = "password" name = "pw" value = "1234">
+		<input type = "radio" name = "gender" value = "male" checked> 남
+		<input type = "radio" name = "gender" value = "female"> 여
+	</form>
+</body>
+</html>
